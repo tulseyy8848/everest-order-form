@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Welcome to Our Everest Restaurant!</h1>
+
+    <h2>Menu</h2>
+    <table>
+
+    <div class="menu">
+        <div class="menu-item">
+            <table>
+                <tr>
+                  <th>Food name</th>
+                  <th>Price</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                 <td>Momo</td>
+                 <td>12.99$</td>
+                 <td> Savory dumplings filled with meat or vegetables, often steamed or fried, and served with a tangy dipping sauce.</td>
+                </tr>
+                <tr>
+                  <td>Daal bhat</td>
+                  <td>13.99$</td>
+                  <td> A traditional South Asian meal consisting of lentil soup (daal) served with rice (bhat), often accompanied by vegetables and pickles.</td>
+                </tr>
+              <tr>
+                <td>Newari khaja set</td>
+                <td>14.99$</td>
+                <td> A traditional Nepali platter featuring an assortment of savory snacks, including fried meat, vegetables, and pickles, served with rice or lentils.</td>
+              </tr>
+              <tr>
+               <td>Sizzler</td>
+               <td>12.99$</td>
+               <td> A flavorful dish served on a hot plate, typically featuring grilled meat or vegetables, accompanied by rice, fries, and a variety of sauces.</td>
+              </tr>
+              <tr>
+                <td>pakauda</td>
+                <td>7.99$</td>
+                <td>**Pakauda**: Crispy, deep-fried fritters made from seasoned chickpea flour batter, often mixed with vegetables or spices, and served as a popular snack or appetizer.</td>
+              </tr>
+            </table>
+            
+
+    <h2>Order Form</h2>
+    <div class="order-form">
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="item">Select Menu Item:</label>
+            <select id="item" required>
+                <option value="">--Please choose an option--</option>
+                <option value="momo">Momo</option>
+                <option value="Dal bhat">Dal bhat</option>
+                <option value="Newari khaja set">Newari khaja set</option>
+                <option value="Sizzler">Sizzler</option>
+                <option value="Pakauda">Pakauda</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" value="1" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const item = document.getElementById('item').value;
+            const quantity = document.getElementById('quantity').value;
+
+            alert(`Thank you, ${name}! You've ordered ${quantity} x ${item}.`);
+        });
+    </script>
+</body>
+</html>
